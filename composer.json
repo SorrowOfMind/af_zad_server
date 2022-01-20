@@ -1,0 +1,15 @@
+{
+    "name": "basia/adsfox_zadanie",
+    "authors": [
+        {
+            "name": "SorrowOfMind",
+            "email": "sortoflifecraze@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
