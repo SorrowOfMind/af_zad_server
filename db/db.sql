@@ -1,0 +1,7 @@
+CREATE DATABASE adsfox;
+
+CREATE TABLE channels (
+  id int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  num_clients INT(11) NOT NULL
+);
