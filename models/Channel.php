@@ -17,6 +17,14 @@ class Channel
         $this->db = $db;
     }
 
+    public function get()
+    {
+        $qry = "SELECT * FROM {$this->table}";
+        $stmt = $this->db->pdo->prepare($qry);
+        $stmt->execute();
+        return $stmt;
+    }
+
     public function create()
     {
         $qry = "INSERT INTO {$this->table} (name, num_clients) VALUES (:name, :num_clients)";
