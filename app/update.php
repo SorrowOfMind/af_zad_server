@@ -8,6 +8,7 @@
 
     use app\db\Database;
     use app\models\Channel;
+    use app\utils\SanitizeHelper;
 
     if ($_SERVER['REQUEST_METHOD'] === 'PUT')
 {
