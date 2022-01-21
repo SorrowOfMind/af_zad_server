@@ -18,10 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     $data = json_decode(file_get_contents("php://input"), TRUE);
 
     $channel->name = $data['name'];
-    $channel->clients = $data['number'];
+    $channel->clients = $data['num_clients'];
 
     if ($channel->create()) 
-        echo json_encode(['message'=>'Dodano kanał']);
+        echo json_encode(['message'=>'Dodano kanał', 'id'=>"{$channel->id}"]);
     else 
         echo json_encode(['message'=>'Dodanie kanału nie powiodło się']);
 }

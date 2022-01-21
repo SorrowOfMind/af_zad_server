@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../../vendor/autoload.php';
+    require_once __DIR__ . '/../vendor/autoload.php';
 
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
@@ -17,9 +17,8 @@
     {
         $channelsArr = [];
         $rows = $data->fetchAll(PDO::FETCH_ASSOC);
-
         foreach($rows as $row)
-            array_push($channelsArr);
+            array_push($channelsArr, $row);
 
         echo json_encode($channelsArr);
     }
