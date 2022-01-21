@@ -8,13 +8,14 @@
 
     use app\db\Database;
     use app\models\Channel;
+    use app\utils\SanitizeHelper;
 
     if ($_SERVER['REQUEST_METHOD'] === 'DELETE')
 {
     $db = new Database();
     $channel = new Channel($db);
 
-    $id = $_GET['id'];
+    $id = SanitizeHelper::sanitizeData($_GET['id']);
 
     $channel->id = $id;
 

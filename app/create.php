@@ -9,6 +9,7 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
 
 use app\db\Database;
 use app\models\Channel;
+use app\utils\SanitizeHelper;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
@@ -17,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 
     $data = json_decode(file_get_contents("php://input"), TRUE);
 
-    $channel->name = $data['name'];
-    $channel->clients = $data['num_clients'];
+    $channel->name = SanitizeHelper::sanitizeData($data['name']);
+    $channel->clients = SanitizeHelper::sanitizeData($data['num_clients']);
 
     if ($channel->create()) 
         echo json_encode(['message'=>'Dodano kanał', 'id'=>"{$channel->id}"]);

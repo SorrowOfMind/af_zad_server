@@ -3,7 +3,7 @@
 namespace app\models;
 
 use app\db\Database;
-use PDO;
+
 
 class Channel
 {

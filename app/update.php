@@ -14,7 +14,7 @@
     $db = new Database();
     $channel = new Channel($db);
 
-    $id = $_GET['id'];
+    $id = SanitizeHelper::sanitizeData($_GET['id']);
     $data = json_decode(file_get_contents("php://input"), TRUE);
 
     $channel->id = $id;
