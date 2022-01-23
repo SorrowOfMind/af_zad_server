@@ -6,7 +6,6 @@
 
     use app\db\Database;
     use app\models\Channel;
-    use app\utils\SanitizeHelper;
 
     $db = new Database();
     $channel = new Channel($db);
